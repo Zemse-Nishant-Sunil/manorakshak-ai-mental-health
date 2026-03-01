@@ -5,6 +5,9 @@
   animation: fadeIn 0.4s ease both;
   max-width: 800px;
   margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 /* ── Header ───────────────────────────────────── */
@@ -66,6 +69,20 @@
 .generate-btn:disabled {
   opacity: 0.6;
   cursor: not-allowed;
+}
+
+/* ── Message banner ──────────────────────────── */
+.journal-message {
+  background: var(--emerald-dim);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.4rem;
+  color: #6ee7b7;
+  font-size: 0.88rem;
+  font-weight: 500;
+  line-height: 1.5;
+  animation: fadeInUp 0.3s var(--spring) both;
 }
 
 /* ── Today section ────────────────────────────── */
@@ -205,6 +222,7 @@
   outline: none;
   transition: border-color var(--transition), box-shadow var(--transition);
   margin-bottom: 0.85rem;
+  box-sizing: border-box;
 }
 
 .manual-journal textarea::placeholder {
@@ -445,4 +463,120 @@
   line-height: 1.87;
   white-space: pre-wrap;
   margin-top: 0.75rem;
+}
+
+/* ── Responsive ───────────────────────────────── */
+@media (max-width: 768px) {
+  .journal-page {
+    padding: 1.1rem 1rem;
+    max-width: 100%;
+  }
+
+  .journal-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .journal-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .generate-btn {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    padding: 0.78rem 1rem;
+  }
+
+  .journal-today,
+  .manual-journal {
+    padding: 1.1rem;
+  }
+
+  /* Wrap mood select + save button so they share a row */
+  .manual-journal>div {
+    flex-wrap: wrap;
+  }
+
+  .manual-journal select {
+    flex: 1;
+    min-width: 120px;
+  }
+
+  .save-manual-btn {
+    flex: 1;
+    min-width: 100px;
+    text-align: center;
+  }
+
+  /* Past entries: date on top, badge below */
+  .journal-entry-header {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .journal-date {
+    width: 100%;
+  }
+
+  .journal-entry {
+    padding: 0.85rem 1rem;
+  }
+
+  /* Disable the 3D tilt — too heavy on mobile touch */
+  .journal-entry:hover {
+    transform: none;
+  }
+
+  .journal-modal {
+    max-height: 88vh;
+    padding: 1.5rem 1.1rem;
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+  }
+}
+
+/* ── Extra small phones (≤ 480px) ─────────────── */
+@media (max-width: 480px) {
+  .journal-page {
+    padding: 0.9rem 0.75rem;
+  }
+
+  .journal-header h1 {
+    font-size: 1.3rem;
+  }
+
+  .journal-header p {
+    font-size: 0.8rem;
+  }
+
+  .journal-today h2 {
+    font-size: 0.72rem;
+  }
+
+  .journal-content {
+    font-size: 0.87rem;
+  }
+
+  .manual-journal>div {
+    flex-direction: column;
+  }
+
+  .manual-journal select,
+  .save-manual-btn {
+    width: 100%;
+    flex: unset;
+  }
+
+  .journal-preview {
+    font-size: 0.8rem;
+  }
+
+  .journal-modal {
+    padding: 1.25rem 1rem;
+  }
+
+  .journal-modal h2 {
+    font-size: 1rem;
+    padding-right: 2rem;
+  }
 }

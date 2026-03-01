@@ -3,6 +3,9 @@
     padding: 2.5rem;
     min-height: 100vh;
     animation: fadeIn 0.4s ease;
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
 }
 
 /* ── Header ───────────────────────────────────── */
@@ -558,6 +561,36 @@
     }
 
     .stress-relief-page {
-        padding: 1.5rem;
+        padding: 1.1rem 1rem;
+        max-width: 100%;
+    }
+
+    .stress-relief-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .tab-navigation {
+        width: 100%;
+    }
+
+    .tab-btn {
+        flex: 1;
+        text-align: center;
+    }
+
+    .video-player iframe {
+        height: 220px;
+    }
+
+    .tips-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .exercise-card {
+        padding: 1.1rem;
+    }
+
+    .time {
+        font-size: 1.9rem;
     }
 }

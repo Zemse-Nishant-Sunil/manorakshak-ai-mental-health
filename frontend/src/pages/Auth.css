@@ -372,18 +372,53 @@
 @media (max-width:768px) {
   .auth-page {
     grid-template-columns: 1fr;
+    overflow-y: auto;
   }
 
   .auth-left {
-    padding: 2rem;
-    min-height: 35vh;
+    padding: 2rem 1.5rem;
+    min-height: 38vh;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
   }
 
   .auth-brand h1 {
-    font-size: 1.8rem;
+    font-size: 1.9rem;
+  }
+
+  .auth-brand .brand-icon {
+    font-size: 2.6rem;
+  }
+
+  .auth-tagline {
+    margin-top: 1.5rem;
+    gap: 0.5rem;
   }
 
   .auth-right {
-    padding: 2rem 1.5rem;
+    padding: 2rem 1.25rem;
+  }
+
+  .auth-form-box h2 {
+    font-size: 1.65rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-left {
+    min-height: 0;
+    padding: 1.5rem 1rem;
+  }
+
+  .auth-tagline {
+    display: none;
+  }
+
+  .auth-right {
+    padding: 1.5rem 1rem;
+  }
+
+  .auth-form-box {
+    max-width: 100%;
   }
 }

@@ -96,7 +96,7 @@ export default function JournalPage() {
       </div>
 
       {message && (
-        <div style={{ background: '#f0f9f3', border: '1px solid var(--sage-light)', borderRadius: 'var(--radius-sm)', padding: '0.75rem 1rem', marginBottom: '1.5rem', color: 'var(--sage-dark)', fontSize: '0.9rem' }}>
+        <div className="journal-message">
           {message}
         </div>
       )}

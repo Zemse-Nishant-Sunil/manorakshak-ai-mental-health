@@ -15,17 +15,38 @@ export default function Layout() {
   const navigate = useNavigate();
   const location = useLocation();
   const [pageKey, setPageKey] = useState(location.pathname);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   useEffect(() => {
     setPageKey(location.pathname);
+    setSidebarOpen(false); // close sidebar on route change (mobile)
   }, [location.pathname]);
 
   const handleLogout = () => { logout(); navigate('/login'); };
 
   return (
     <div className="layout">
+      {/* ── Mobile top bar ── */}
+      <div className="mobile-topbar">
+        <button className="hamburger-btn" onClick={() => setSidebarOpen(o => !o)} aria-label="Toggle menu">
+          <span className={`ham-line ${sidebarOpen ? 'open' : ''}`} />
+          <span className={`ham-line ${sidebarOpen ? 'open' : ''}`} />
+          <span className={`ham-line ${sidebarOpen ? 'open' : ''}`} />
+        </button>
+        <div className="mobile-logo">
+          <span>🌿</span>
+          <span>ManoRakshak</span>
+        </div>
+        {isIncognito && <span className="incognito-badge">Incognito</span>}
+      </div>
+
+      {/* ── Overlay (mobile) ── */}
+      {sidebarOpen && (
+        <div className="sidebar-overlay" onClick={() => setSidebarOpen(false)} />
+      )}
+
       {/* ── Sidebar ── */}
-      <aside className={`sidebar ${isIncognito ? 'incognito' : ''}`}>
+      <aside className={`sidebar ${isIncognito ? 'incognito' : ''} ${sidebarOpen ? 'sidebar-mobile-open' : ''}`}>
         {/* Logo */}
         <div className="sidebar-logo">
           <div className="logo-icon">
