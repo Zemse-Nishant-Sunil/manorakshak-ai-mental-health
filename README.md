@@ -1,5 +1,7 @@
 # 🌿 ManoRakshak - Your Mental Health AI Companion
 
+👉 See MY_CONTRIBUTION.md for my role in this project
+
 **ManoRakshak** is an AI-powered mental health support platform designed specifically for Indian users (Gen Z & Gen Alpha). It provides empathetic, judgment-free conversations with an AI psychiatrist that understands cultural context, emotional struggles, and the unique pressures of digital-native generations.
 
 ---
